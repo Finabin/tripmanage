@@ -1,0 +1,65 @@
+.Login-BackGround {
+  background-color: #2886f4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden; /* 确保内容不会溢出到切除部分 */
+}
+
+.Login-BackGround::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: inherit; /* 继承父元素的背景 */
+  clip-path: ellipse(
+    100% 100% at right bottom
+  ); /* 椭圆在右下角，但这不是真正的切除，只是形状 */
+  /* 为了实现真正的切除效果，我们需要使用 polygon 或其他方法 */
+  /* 这里只是一个模拟效果，实际上椭圆不会从元素中“切除”部分 */
+
+  /* 使用 polygon 来模拟圆润的切除 */
+  /* 注意：polygon 的点需要精细调整以达到最佳效果 */
+  /* clip-path: polygon(100% 0, 100% 75%, 75% 100%, 0 100%, 0 0); */
+
+  /* 隐藏超出父元素的部分 */
+  transform: translateX(-25%) translateY(-25%); /* 根据需要调整 */
+  transform-origin: right bottom; /* 变换的原点在右下角 */
+  border-radius: 50%; /* 使椭圆变为圆形 */
+  width: 150%; /* 扩大以覆盖父元素的右下角 */
+  height: 150%;
+  clip-path: polygon(100% 0, 100% 80%, 90% 100%, 50% 100%, 0 70%, 0 0);
+}
+
+.Login-Box-Container {
+  width: 20%;
+  height: 35%;
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  div {
+    width: 100%;
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    align-items: center;
+    margin: 3% 0;
+    Input {
+      width: 90%;
+    }
+    Button {
+      width: 75%;
+      letter-spacing: 10px;
+    }
+  }
+}

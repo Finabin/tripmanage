@@ -6,6 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+export const GLOBAL_HOST = '192.168.0.103';
+export const GLOBAL_POST = '5000';
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
